@@ -1,11 +1,10 @@
-name: Heroku Deployment
-
 on:
   pull_request:
     branches: ["main"]
 
 jobs:
   build:
+    name: Build project
     runs-on: ubuntu-latest
 
     steps:

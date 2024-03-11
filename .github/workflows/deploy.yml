@@ -1,5 +1,3 @@
-name: Heroku Deployment
-
 on:
   push:
     branches: ["main"]
@@ -8,6 +6,7 @@ on:
 
 jobs:
   build:
+    name: Build project
     runs-on: ubuntu-latest
 
     steps:
@@ -24,6 +23,7 @@ jobs:
         run: mvn -B package --file pom.xml
 
   deploy:
+    name: Deploy to Heroku
     needs: build
     runs-on: ubuntu-latest
 
